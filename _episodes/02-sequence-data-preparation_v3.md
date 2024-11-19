@@ -168,7 +168,7 @@ $ ls -ltr
 ```
 
 ```
--rwxrwx--x+ 1 jeuge18p uoo02328 63 Nov 17 13:08 moduleload
+-rwxr-x---+ 1 jeuge18p nesi02659 189 Nov 20 08:46 moduleload
 ```
 {: .output}
 
@@ -181,10 +181,14 @@ $ nano moduleload
 ```
 #!/bin/bash
 
-module load eDNA/2021.11-gimkl-2020a-Python-3.8.2
+module load CRABS/1.0.6
+module load FastQC/0.12.1
+module load cutadapt/4.4-gimkl-2022a-Python-3.11.3
+module load VSEARCH/2.21.1-GCC-11.3.0
+module load BLAST/2.13.0-GCC-11.3.0
 ```
 
-When opening this file, we can see that the script starts with what is called a **shebang** `#!`. This sign lets the computer know how to interpret the script. The following line is specific to NeSI, where we will load the necessary software programs to run our scripts. We will, therefore, add this script to all subsequent scripts to make sure the correct software is available on NeSI.
+When opening this file, we can see that the script starts with what is called a **shebang** `#!`. This sign lets the computer know how to interpret the script. The following lines are specific to NeSI, where we will load the necessary software programs to run our scripts. We will, therefore, add this script to all subsequent scripts to make sure the correct software is available on NeSI.
 
 To exit the script, we can press `ctr + X`, which will bring us back to the terminal window.
 
@@ -215,8 +219,8 @@ $ ls -ltr
 ```
 
 ```
--rwxrwx--x+ 1 jeuge18p uoo02328  63 Nov 17 13:08 moduleload
--rw-rw----+ 1 jeuge18p uoo02328 210 Nov 17 13:24 demux
+-rwxr-x---+ 1 jeuge18p nesi02659 189 Nov 20 08:46 moduleload
+-rw-rw----+ 1 jeuge18p nesi02659 194 Nov 20 09:09 demux
 ```
 {: .output}
 
@@ -233,8 +237,8 @@ $ ls -ltr
 ```
 
 ```
--rwxrwx--x+ 1 jeuge18p uoo02328  63 Nov 17 13:08 moduleload
--rwxrwx--x+ 1 jeuge18p uoo02328 210 Nov 17 13:24 demux
+-rwxr-x---+ 1 jeuge18p nesi02659 189 Nov 20 08:46 moduleload
+-rwxrwx--x+ 1 jeuge18p nesi02659 194 Nov 20 09:09 demux
 ```
 {: .output}
 
@@ -247,11 +251,11 @@ $ ./demux
 Once this script has been executed, it will generate quite a bit of output in the terminal. The most important information, however, can be found at the top, indicating how many sequences could be assigned. The remainder of the output is detailed information for each sample.
 
 ```
-This is cutadapt 4.4 with Python 3.11.7
+This is cutadapt 4.4 with Python 3.11.3
 Command line parameters: FTP103_S1_L001_R1_001.fastq.gz -g file:../meta/sample_metadata.fasta -o ../input/{name}.fastq --discard-untrimmed --no-indels -e 0 --cores=0
-Processing single-end reads on 8 cores ...
-Done           00:00:02       853,561 reads @   3.2 µs/read;  18.51 M reads/minute
-Finished in 2.778 s (3.254 µs/read; 18.44 M reads/minute).
+Processing single-end reads on 70 cores ...
+Done           00:00:08       853,561 reads @   9.5 µs/read;   6.33 M reads/minute
+Finished in 8.136 s (9.532 µs/read; 6.29 M reads/minute).
 
 === Summary ===
 
@@ -274,18 +278,18 @@ $ ls -ltr ../input/
 ```
 
 ```
--rw-r--r--  1 gjeunen  staff  5404945  6 Nov 13:39 AM1.fastq
--rw-r--r--  1 gjeunen  staff  4906020  6 Nov 13:39 AM2.fastq
--rw-r--r--  1 gjeunen  staff  5916544  6 Nov 13:39 AM4.fastq
--rw-r--r--  1 gjeunen  staff  5214931  6 Nov 13:39 AM5.fastq
--rw-r--r--  1 gjeunen  staff  4841565  6 Nov 13:39 AS2.fastq
--rw-r--r--  1 gjeunen  staff  5290868  6 Nov 13:39 AS4.fastq
--rw-r--r--  1 gjeunen  staff  5660255  6 Nov 13:39 AS5.fastq
--rw-r--r--  1 gjeunen  staff  4524100  6 Nov 13:39 AS6.fastq
--rw-r--r--  1 gjeunen  staff  3944614  6 Nov 13:39 AM3.fastq
--rw-r--r--  1 gjeunen  staff  4067965  6 Nov 13:39 AM6.fastq
--rw-r--r--  1 gjeunen  staff  9788430  6 Nov 13:39 AS3.fastq
--rw-r--r--  1 gjeunen  staff      461  6 Nov 13:39 ASN.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 5404945 Nov 20 09:10 AM1.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 4906020 Nov 20 09:10 AM2.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 3944614 Nov 20 09:10 AM3.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 5916544 Nov 20 09:10 AM4.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 5214931 Nov 20 09:10 AM5.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 4067965 Nov 20 09:10 AM6.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 4841565 Nov 20 09:10 AS2.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 9788430 Nov 20 09:10 AS3.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 5290868 Nov 20 09:10 AS4.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 5660255 Nov 20 09:10 AS5.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 4524100 Nov 20 09:10 AS6.fastq
+-rw-rw----+ 1 jeuge18p nesi02659     461 Nov 20 09:10 ASN.fastq
 ```
 {: .output}
 
@@ -327,26 +331,6 @@ $ ls -ltr ../input/
 >> `{print $1 / 4}` is the parameter passed to `awk` to print the number of lines found by `wc` and divides this number by 4, due to the file structure of a fastq file.
 > {: .solution}
 {: .challenge}
-
-```bash
-$ head -12 ../input/AM1.fastq
-```
-
-```
-@M02181:93:000000000-D20P3:1:1101:15402:1843 1:N:0:1
-GACAGGTAGACCCAACTACAAAGGTCCCCCAATAAGAGGACAAACCAGAGGGACTACTACCCCCATGTCTTTGGTTGGGGCGACCGCGGGGGAAGAAGTAACCCCCACGTGGAACGGGAGCACAACTCCTTGAACTCAGGGCCACAGCTCTAAGAAACAAAATTTTTGACCTTAAGATCCGGCAATGCCGATCAACGGACCG
-+
-2222E2GFFCFFCEAEF3FFBD32FFEFEEE1FFD55BA1AAEEFFE11AA??FEBGHEGFFGE/F3GFGHH43FHDGCGEC?B@CCCC?C??DDFBF:CFGHGFGFD?E?E?FFDBD.-A.A.BAFFFFFFBBBFFBB/.AADEF?EFFFF///9BBFE..BFFFF;.;FFFB///BBFA-@=AFFFF;-BADBB?-ABD;
-@M02181:93:000000000-D20P3:1:1101:16533:1866 1:N:0:1
-TTTAGAACAGACCATGTCAGCTACCCCCTTAAACAAGTAGTAATTATTGAACCCCTGTTCCCCTGTCTTTGGTTGGGGCGACCACGGGGAAGAAAAAAACCCCCACGTGGACTGGGAGCACCTTACTCCTACAACTACGAGCCACAGCTCTAATGCGCAGAATTTCTGACCATAAGATCCGGCAAAGCCGATCAACGGACCG
-+
-GGHCFFBFBB3BA2F5FA55BF5GGEGEEHF55B5ABFB5F55FFBGGB55GEEEFEGFFEFGC1FEFFGBBGH?/??EC/>E/FE???//DFFFFF?CDDFFFCFCF...>DAA...<.<CGHFFGGGH0CB0CFFF?..9@FB.9AFFGFBB09AAB?-/;BFFGB/9F/BFBB/BFFF;BCAF/BAA-@B?/B.-.@DA
-@M02181:93:000000000-D20P3:1:1101:18101:1874 1:N:0:1
-ACTAGACAACCCACGTCAAACACCCTTACTCTGCTAGGAGAGAACATTGTGGCCCTTGTCTCACCTGTCTTCGGTTGGGGCGACCGCGGAGGACAAAAAGCCTCCATGTGGACTGAAGTAACTATCCTTCACAGCTCAGAGCCGCGGCTCTACGCGACAGAAATTCTGACCAAAAATGATCCGGCACATGCCGATTAACGGAACA
-+
-BFGBA4F52AEA2A2B2225B2AEEGHFFHHF5BD551331113B3FGDGB??FEGG2FEEGBFFGFGCGHE11FE??//>//<</<///<</CFFB0..<F1FE0G0D000<<AC0<000<DDBC:GGG0C00::C0/00:;-@--9@AFBB.---9--///;F9F//;B/....;//9BBA-9-;.BBBB>-;9A/BAA.999
-```
-{: .output}
 
 ## 4 Renaming sequence headers to incorporate sample names
 
