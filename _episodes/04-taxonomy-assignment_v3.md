@@ -289,7 +289,7 @@ chmod +x sintax
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Reading file ../refdb/sintax_vertebrata_16S.fasta 100%  
@@ -299,7 +299,7 @@ REMINDER: vsearch does not support amino acid sequences
 Counting k-mers 100% 
 Creating k-mer index 100% 
 Classifying sequences 100%  
-Classified 27 of 32 sequences (84.38%)
+Classified 26 of 32 sequences (81.25%)
 ```
 {: .output}
 
