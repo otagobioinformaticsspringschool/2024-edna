@@ -34,7 +34,7 @@ $ ls -ltr
 ```
 
 ```
--rwxr-x---  1 gjeunen  staff  124306274 16 Nov 12:39 FTP103_S1_L001_R1_001.fastq.gz
+-rw-r-----+ 1 jeuge18p nesi02659 124306274 Nov 20 08:46 FTP103_S1_L001_R1_001.fastq.gz
 ```
 {: .output}
 
@@ -114,7 +114,7 @@ $ ls -ltr
 ```
 
 ```
--rw-r--r--@ 1 gjeunen  staff  1139 16 Nov 12:41 sample_metadata.fasta
+-rw-r-----+ 1 jeuge18p nesi02659 1139 Nov 20 08:46 sample_metadata.fasta
 ```
 {: .output}
 
@@ -146,6 +146,7 @@ Note that by specifying the barcode + primer region, cutadapt will automatically
 > before we get started with our first script, let's first determine how many samples are included in our experiment.
 >
 > Hint 1: think about the file structure of the metadata file.
+> 
 > Hint 2: a similar line of code can be written to count the number of sequences in a fasta file (which you might have come across before during OBSS2024)
 > 
 >> ## Solution
