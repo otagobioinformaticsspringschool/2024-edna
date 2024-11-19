@@ -18,12 +18,12 @@ keypoints:
 To start, let's navigate to the raw sequencing file in the `raw` folder within the `~/obss_2024/edna/` directory and list the files in the subdirectory. To navigate between directories, we can use the `cd` command, which stands for **change directory**. It is always a good idea to check if the code executed as expected. In this case, we can verify the current working directory, i.e., the directory we navigated to with the `cd` command, by using the `pwd`  command, which stands for **print working directory**.
 
 ```bash
-$ cd ~/obss_2024/edna/raw/
+$ cd ~/obss_2024/users/YOUR_USERNAME/edna/raw/
 $ pwd
 ```
 
 ```
-/home/username/obss_2024/edna/raw
+/nesi/project/nesi02659/obss_2024/users/YOUR_USERNAME/edna/extra/raw
 ```
 {: .output}
 
