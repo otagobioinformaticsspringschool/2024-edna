@@ -391,7 +391,7 @@ $ ls -ltr ../output/
 ```
 
 ```
--rw-rw----+ 1 jeuge18p uoo02328 54738505 Nov 17 13:51 relabel.fastq
+-rw-rw----+ 1 jeuge18p nesi02659 54738505 Nov 20 09:19 relabel.fastq
 ```
 {: .output}
 
