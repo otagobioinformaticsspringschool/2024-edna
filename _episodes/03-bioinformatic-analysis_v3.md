@@ -52,7 +52,7 @@ $ ./qual
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Reading input file 100%  
@@ -132,14 +132,14 @@ chmod +x derep
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Dereplicating file filtered.fasta 100%  
 25083932 nt in 123537 seqs, min 176, max 214, avg 203
 Sorting 100%
 6645 unique sequences, avg cluster 18.6, median 1, max 19554
-Writing output file 100% 
+Writing FASTA output file 100% 
 ```
 {: .output}
 
@@ -249,7 +249,7 @@ chmod +x denoise
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Reading file uniques.fasta 100%  
@@ -296,7 +296,7 @@ chmod +x chimera
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Reading file denoised.fasta 100%  
@@ -343,7 +343,7 @@ chmod +x table
 ```
 
 ```
-vsearch v2.16.0_macos_aarch64, 16.0GB RAM, 8 cores
+vsearch v2.21.1_linux_x86_64, 503.8GB RAM, 72 cores
 https://github.com/torognes/vsearch
 
 Reading file ../final/zotus.fasta 100%  
@@ -353,7 +353,7 @@ Counting k-mers 100%
 Creating k-mer index 100% 
 Searching 100%  
 Matching unique query sequences: 122120 of 123537 (98.85%)
-Writing OTU table (classic) 100%  
+Writing OTU table (classic) 100%
 ```
 {: .output}
 
