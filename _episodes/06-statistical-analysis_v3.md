@@ -25,7 +25,7 @@ Before we can analyse our data, we need to import and format the files we create
 
 ```R
 ## prepare R environment
-setwd("~obss2024/obss2024/final")
+setwd("~/obss_2024/edna/final")
 
 ## add workshop library
 .libPaths(c(.libPaths(), "/nesi/project/nesi02659/obss_2024/R_lib"))
