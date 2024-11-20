@@ -1,4 +1,4 @@
-v---
+---
 title: "Statistics and Graphing with R"
 teaching: 10
 exercises: 50
