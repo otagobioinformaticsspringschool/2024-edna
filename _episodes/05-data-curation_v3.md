@@ -81,7 +81,7 @@ chmod +x tombraider
 
 From the output we can see that *tombRaider* has identified 6 artefacts, which have now been merged with their parent sequence.
 
-## 3. Contamination removal
+## 3. Contamination removal with R
 
 The next step of data curation is to investigate what is observed in our negative control samples and remove any potential contamination in our data.
 
@@ -91,11 +91,33 @@ In our tutorial data, all reads assigned to our negative control sample dropped 
 
 As of yet, there is no consensus in the metabarcoding research community on how to properly remove contamination from a data set. In this workshop, I will make use of the R package <a href="https://github.com/donaldtmcknight/microDecon" target="_blank" rel="noopener noreferrer"><b>*microDecon*</b></a> to remove the contamination signal from the data. However, please also investigate the R package <a href="https://benjjneb.github.io/decontam/vignettes/decontam_intro.html" target="_blank" rel="noopener noreferrer"><b>*Decontam*</b></a>, which is associated with the popular R package <a href="https://joey711.github.io/phyloseq/" target="_blank" rel="noopener noreferrer"><b>*phyloseq*</b></a>. Another option you can investigate is the use of an abundance threshold, whereby you calculate the highest row-wise relative abundance for a positive detection in the negative control samples and remove all positive detections that fall below this relative abundance threshold.
 
-```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(microDecon)
+### 3.1 Setting up teh R Environment
 
+Open RStudio from the launcher
+```R
+## set working directory
+setwd("~/obss_2024/edna/final")
+
+## add the workshop library
+.libPaths(c(.libPaths(), "/nesi/project/nesi02659/obss_2024/R_lib"))
+
+## load libraries
+library(microDecon)
+library(ggplot2)
+library(dplyr)
+library(car)
+library(lattice)
+library(dplyr)
+library(ggExtra)
+library(ampvis2)
+library(dplyr)
+library(DivE)
+library(sf)
+library(iNEXT.3D)
+```
+### 3.2 Decontamination
+
+```R
 ## read data into R
 count_table <- read.table('zotutable_new.txt', header = TRUE, sep = '\t', check.names = FALSE, comment.char = '')
 taxonomy_table <- read.table('blast_taxonomy_new.txt', header = FALSE, sep = '\t', check.names = FALSE, comment.char = '')
@@ -124,13 +146,6 @@ I suggest to run 4 tests to determine if rarefying your data might be necessary,
 ### 4.1 Read distribution
 
 ```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(ggplot2)
-library(dplyr)
-library(car)
-library(lattice)
-
 ## read data into R
 count_table <- read.table('zotutable_new.txt', header = TRUE, sep = '\t', row.names = 1, check.names = FALSE, comment.char = '')
 metadata_table <- read.table('../stats/metadata.txt', header = TRUE, sep = '\t', row.names = 1, check.names = FALSE, comment.char = '')
@@ -188,12 +203,6 @@ ggplot(metadata_table, aes(x = Location, y = total_read_count, fill = Location))
 ### 4.2 Sequencing depth and detected ZOTUs correlation
 
 ```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(ggplot2)
-library(dplyr)
-library(ggExtra)
-
 ## read data into R
 count_table <- read.table('zotutable_new.txt', header = TRUE, sep = '\t', row.names = 1, check.names = FALSE, comment.char = '')
 taxonomy_table <- read.table('blast_taxonomy_new.txt', header = TRUE, sep = '\t', row.names = 1, check.names = FALSE, comment.char = '')
@@ -256,11 +265,6 @@ Number of Fisher Scoring iterations: 4
 ### 4.3 Rarefaction curves
 
 ```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(ampvis2)
-library(dplyr)
-
 ## read data into R
 count_table <- read.table('zotutable_new.txt', header = TRUE, sep = '\t', check.names = FALSE, comment.char = '')
 colnames(count_table)[1] <- "V1"
@@ -292,12 +296,6 @@ rarefaction_curves
 ### 4.4 Curvature indices
 
 ```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(DivE)
-library(sf)
-library(dplyr)
-
 ## read data in R
 count_table <- read.table('zotutable_new.txt', header = TRUE, sep = '\t', check.names = FALSE, comment.char = '')
 
@@ -343,11 +341,6 @@ print(curvature_df)
 The last data curation method we will cover in this workshop are species accumulation curves, which are used to assess if sufficient sampling was conducted. They work similar to rarefaction curves, but plot the number of detected ZOTUs on the y-axis and number of samples per group on the x-axis. If the curves do not flatten, caution is warranted with the statistical analysis, as more species could have been uncovered with additional sampling in the region.
 
 ```R
-## prepare R environment
-setwd("/Users/gjeunen/Desktop/obss2024/final")
-library(iNEXT.3D)
-library(ggplot2)
-
 ## read data in R
 count_table <- read.table('zotutable_new.txt', header = TRUE, row.names = 1, sep = '\t', check.names = FALSE, comment.char = '')
 metadata_table <- read.table('../stats/metadata.txt', header = TRUE, row.names = 1, sep = '\t', check.names = FALSE, comment.char = '')
