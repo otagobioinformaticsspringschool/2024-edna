@@ -23,7 +23,7 @@ $ pwd
 ```
 
 ```
-/home/<username>/obss_2024/edna/extra/raw
+/home/<username>/obss_2024/edna/raw
 ```
 {: .output}
 
