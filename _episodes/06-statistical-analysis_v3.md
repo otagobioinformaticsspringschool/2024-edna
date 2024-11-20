@@ -1,4 +1,4 @@
----
+v---
 title: "Statistics and Graphing with R"
 teaching: 10
 exercises: 50
@@ -85,7 +85,7 @@ While we can start to see that there are some differences between sampling locat
 
 ```R
 # combine samples per sample location and plot abundance and relative abundance of taxa in stacked bar graph
-location <- merged
+location <- count_table
 names(location) <- substring(names(location), 1, 2)
 locsum <- t(rowsum(t(location), group = colnames(location), na.rm = TRUE))
 locsummelt <- melt(locsum)
