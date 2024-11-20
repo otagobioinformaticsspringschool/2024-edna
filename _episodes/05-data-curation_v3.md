@@ -91,7 +91,7 @@ In our tutorial data, all reads assigned to our negative control sample dropped 
 
 As of yet, there is no consensus in the metabarcoding research community on how to properly remove contamination from a data set. In this workshop, I will make use of the R package <a href="https://github.com/donaldtmcknight/microDecon" target="_blank" rel="noopener noreferrer"><b>*microDecon*</b></a> to remove the contamination signal from the data. However, please also investigate the R package <a href="https://benjjneb.github.io/decontam/vignettes/decontam_intro.html" target="_blank" rel="noopener noreferrer"><b>*Decontam*</b></a>, which is associated with the popular R package <a href="https://joey711.github.io/phyloseq/" target="_blank" rel="noopener noreferrer"><b>*phyloseq*</b></a>. Another option you can investigate is the use of an abundance threshold, whereby you calculate the highest row-wise relative abundance for a positive detection in the negative control samples and remove all positive detections that fall below this relative abundance threshold.
 
-### 3.1 Setting up teh R Environment
+### 3.1 Setting up the R Environment
 
 Open RStudio from the launcher
 ```R
