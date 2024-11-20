@@ -282,5 +282,7 @@ Significant Indicator Distribution
 ```
 {:output}
 
-**That is all for the OBSS 2024 eDNA workshop. If you'd like a more in depth tutorial on eDNA metabarcoding data analysis, please visit my website (https://gjeunen.github.io/hku2023eDNAworkshop/intro.html). Thank you all for your participation. Please feel free to contact me for any questions (gjeunen@gmail.com)!**
+**That is all for the OBSS 2024 eDNA workshop. If you'd like a more in depth tutorial on eDNA metabarcoding data analysis, please visit my website [gjeunen.github.io/hku2023eDNAworkshop](https://gjeunen.github.io/hku2023eDNAworkshop/intro.html).** note: Otago Univeristy wifi blocks access, use another connection or a vpn.
+
+**Thank you all for your participation. Please feel free to contact me for any questions (gjeunen@gmail.com)!**
 
