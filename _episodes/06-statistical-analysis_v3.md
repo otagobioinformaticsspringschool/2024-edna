@@ -282,6 +282,18 @@ Significant Indicator Distribution
 ```
 {:output}
 
+Extra links for further reading:
+
+- [https://gjeunen.github.io/hku2023eDNAworkshop/setup.html](https://gjeunen.github.io/hku2023eDNAworkshop/setup.html)
+- [https://nsojournals.onlinelibrary.wiley.com/doi/10.1111/oik.07202](https://nsojournals.onlinelibrary.wiley.com/doi/10.1111/oik.07202)
+- [https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.13014](https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.13014)
+- [https://www.biostathandbook.com/onesamplettest.html](https://www.biostathandbook.com/onesamplettest.html)
+- [https://rcompanion.org/rcompanion/d_02.html](https://rcompanion.org/rcompanion/d_02.html)
+- [https://www.davidzeleny.net/anadat-r/doku.php/en:pcoa_nmds_examples](https://www.davidzeleny.net/anadat-r/doku.php/en:pcoa_nmds_examples)
+- [https://www.beast2.org/](https://www.beast2.org/)
+- [https://yulab-smu.top/treedata-book/chapter7.html](https://yulab-smu.top/treedata-book/chapter7.html)
+
+
 **That is all for the OBSS 2024 eDNA workshop. If you'd like a more in depth tutorial on eDNA metabarcoding data analysis, please visit my website [gjeunen.github.io/hku2023eDNAworkshop](https://gjeunen.github.io/hku2023eDNAworkshop/intro.html).** note: Otago Univeristy wifi blocks access, use another connection or a vpn.
 
 **Thank you all for your participation. Please feel free to contact me for any questions (gjeunen@gmail.com)!**
